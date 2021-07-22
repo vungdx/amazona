@@ -58,6 +58,8 @@ userRouter.post(
   expressAsyncHandler(async (req, res) => {
     const user = new User({ name: req.body.name, email: req.body.email, password: bcrypt.hashSync(req.body.password, 8) });
     const createdUsers = await user.save();
+    console.log("khi create user thì createdUsers là", createdUsers);
+
     res.send({
       _id: createdUsers.id,
       name: createdUsers.name,

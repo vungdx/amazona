@@ -26,7 +26,6 @@ import {
 export const listProducts =
   ({ pageNumber = "", seller = "", name = "" }) =>
   async (dispatch) => {
-    console.log("params truyền lên search là", name);
     dispatch({
       type: PRODUCT_LIST_REQUEST,
     });
